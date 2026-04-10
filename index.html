@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JS Quiz — Test Your Knowledge</title>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── Start Screen ── -->
+  <div class="screen" id="screen-start">
+    <div class="card start-card">
+      <div class="start-badge">JavaScript</div>
+      <div class="start-icon">⚡</div>
+      <h1 class="start-title">JS Quiz</h1>
+      <p class="start-sub">Test your JavaScript knowledge.<br>Variables, DOM, Events &amp; more.</p>
+      <div class="start-meta">
+        <span class="meta-pill">🎯 10 Questions</span>
+        <span class="meta-pill">⏱ ~3 min</span>
+      </div>
+      <button class="btn btn-primary" id="start-btn">Start Quiz</button>
+    </div>
+  </div>
+
+  <!-- ── Quiz Screen ── -->
+  <div class="screen hidden" id="screen-quiz">
+    <div class="card quiz-card">
+
+      <!-- Top bar -->
+      <div class="quiz-topbar">
+        <span class="question-counter" id="question-counter">Question 1 of 10</span>
+        <span class="score-badge" id="score-badge">0 pts</span>
+      </div>
+
+      <!-- Progress bar -->
+      <div class="progress-wrap">
+        <div class="progress-bar" id="progress-bar"></div>
+      </div>
+
+      <!-- Question -->
+      <div class="question-wrap">
+        <div class="question-number" id="question-number">01</div>
+        <p class="question-text" id="question-text">Loading...</p>
+      </div>
+
+      <!-- Answer options -->
+      <div class="options-grid" id="options-grid"></div>
+
+      <!-- Next button (hidden until answer chosen) -->
+      <button class="btn btn-next hidden" id="next-btn">
+        Next <span class="btn-arrow">→</span>
+      </button>
+
+    </div>
+  </div>
+
+  <!-- ── Result Screen ── -->
+  <div class="screen hidden" id="screen-result">
+    <div class="card result-card">
+      <div class="result-emoji" id="result-emoji">🎉</div>
+      <h2 class="result-title" id="result-title">Great job!</h2>
+      <p class="result-sub" id="result-sub">You answered correctly</p>
+
+      <div class="score-ring-wrap">
+        <svg class="score-ring" viewBox="0 0 120 120">
+          <circle class="ring-bg" cx="60" cy="60" r="50"/>
+          <circle class="ring-fill" id="ring-fill" cx="60" cy="60" r="50"
+            stroke-dasharray="314" stroke-dashoffset="314"/>
+        </svg>
+        <div class="score-ring-text">
+          <span class="score-num" id="score-num">0</span>
+          <span class="score-denom" id="score-denom">/10</span>
+        </div>
+      </div>
+
+      <div class="result-stats">
+        <div class="stat-box">
+          <div class="stat-val" id="stat-correct">0</div>
+          <div class="stat-label">Correct</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-wrong">0</div>
+          <div class="stat-label">Wrong</div>
+        </div>
+        <div class="stat-box">
+          <div class="stat-val" id="stat-pct">0%</div>
+          <div class="stat-label">Score</div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary" id="restart-btn">Play Again 🔄</button>
+      <button class="btn btn-ghost" id="home-btn">Back to Home</button>
+    </div>
+  </div>
+
+  <script src="questions.js"></script>
+  <script src="app.js"></script>
+
+  <footer class="footer">
+    Dev by Dušan
+  </footer>
+</body>
+</html>
